@@ -1,0 +1,19 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+<h2>{{post.title}}</h2>
+{% row %}
+  <div class = "col">
+    <!---{%include "blog/post-byinline.html"%}--->
+    {% recent_posts post  %}
+  </div>
+{% endrow %}
+<div>
+  {% row %}
+    <div class = "col">
+      {{post.content | safe}}
+    </div>
+  {% endrow %}
+</div>
+{% endblock%}
